@@ -46,4 +46,4 @@ font-family = "JetBrainsMonoNL Nerd Font Mono"
 background-opacity = 0.9
 theme = "tokyonight"
 clipboard-write = allow
-
+mouse-hide-while-typing = true
