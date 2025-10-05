@@ -11,6 +11,7 @@ $golang\
 $php\
 [](fg:#212736 bg:#1d2230)\
 $time\
+$hostname\
 [ ](fg:#1d2230)\
 \n$character"""
 
@@ -27,6 +28,11 @@ truncation_symbol = "…/"
 "Pictures" = " "
 "git" = "󰊢"
 "docker" = ""
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)on [$hostname](bold red) '
+disabled = false
 
 [git_branch]
 symbol = ""
