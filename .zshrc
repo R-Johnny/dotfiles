@@ -2,15 +2,18 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 export XDG_CACHE_HOME="$HOME/.cache"
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
 
 
 export PATH="$PATH:/home/robert/scripts"
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+export ANDROID_SDK_ROOT=~/git/android/sdk/
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export MANPAGER='nvim +Man!'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -78,12 +81,18 @@ eval "$(starship init zsh)"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions docker)
+
+plugins=(git gh zsh-autosuggestions docker vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 alias snvim="sudo -E nvim"
+bindkey -v
 bindkey '^ ' autosuggest-accept
 bindkey -s ^f "tmux-sessionizer\n"
+
+VI_MODE_CURSOR_OPPEND=2
+VI_MODE_SET_CURSOR=true
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 # User configuration
 
@@ -115,8 +124,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # 
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 eval "$(dircolors -b ~/.dircolors)"
 # Use LS_COLORS for completion colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
