@@ -13,6 +13,7 @@ export PATH="$PATH:/home/robert/scripts"
 export ZSH="$HOME/.oh-my-zsh"
 export ANDROID_SDK_ROOT=~/git/android/sdk/
 export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export MANPAGER='nvim +Man!'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
