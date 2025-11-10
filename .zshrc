@@ -87,8 +87,12 @@ plugins=(git gh zsh-autosuggestions docker vi-mode)
 source $ZSH/oh-my-zsh.sh
 alias snvim="sudo -E nvim"
 bindkey -v
+bindkey '^Y' forward-word
+bindkey '^O' up-line-or-beginning-search
+bindkey "^[[111;6u" down-line-or-search
 bindkey '^ ' autosuggest-accept
 bindkey -s ^f "tmux-sessionizer\n"
+alias ls='eza --group-directories-first'
 
 VI_MODE_CURSOR_OPPEND=2
 VI_MODE_SET_CURSOR=true
@@ -126,5 +130,11 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 
 eval "$(dircolors -b ~/.dircolors)"
+eval "$(zoxide init zsh)"
 # Use LS_COLORS for completion colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+mkdirc() {
+  mkdir -p "$1" && cd "$1"
+}
+

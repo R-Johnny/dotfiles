@@ -5,3 +5,4 @@ clipboard-write = allow
 mouse-hide-while-typing = true
 working-directory = home
 window-inherit-working-directory = false
+keybind = ctrl+shift+o=unbind
