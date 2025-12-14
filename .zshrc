@@ -87,6 +87,7 @@ plugins=(git gh zsh-autosuggestions docker vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 alias snvim="sudo -E nvim"
+alias apple="yazi /mnt/blue/.db"
 bindkey -v
 bindkey '^Y' forward-word
 bindkey '^O' up-line-or-beginning-search
